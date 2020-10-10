@@ -2,7 +2,7 @@ import numpy as np
 from random import randrange
 
 n = 3
-board = np.full(n*n, 0)
+
 
 def PrintBoard(board):
 	# print("Currently the board looks like this!")
@@ -85,53 +85,53 @@ def ComputerStrategy(board):
 	while board[p1_ind]!=0:
 		p1_ind = randrange(n*n)
 	return p1_ind
-# Print the behinning
-print("Let us play a game of tic-tac-toe.")
-# Initialiaze the winner to some random value
-PrintBoard(board)
-winner = 0
-# Run the while loop until we have a winner and if the board is not full
-while winner!=1 and winner!=2 and winner!=-3:
-	# Computer strategy
-	p1_ind = ComputerStrategy(board)
-	# We not have a p1_ind which is set for an empyty spot
-	board[p1_ind] = 1 # Set the value for player 1
-	print("My turn!")
-	# Print the board for visualization
-	PrintBoard(board)
-	# Check if we have a winner
-	winner = CheckWin(board)
-	if(winner==1 or winner==-3):
-		break
-	# Now the player2 can choose a number
-	print("Now your turn to choose an integer between [0,8]")
-	p2_ind = input()
-	p2_ind = int(p2_ind)
-	while(p2_ind<0 or p2_ind>8):
-		print("Pick the correct number idiot!")
-		p2_ind = input()
-		p2_ind = int(p2_ind)
+# # Print the behinning
+# print("Let us play a game of tic-tac-toe.")
+# # Initialiaze the winner to some random value
+# PrintBoard(board)
+# winner = 0
+# # Run the while loop until we have a winner and if the board is not full
+# while winner!=1 and winner!=2 and winner!=-3:
+# 	# Computer strategy
+# 	p1_ind = ComputerStrategy(board)
+# 	# We not have a p1_ind which is set for an empyty spot
+# 	board[p1_ind] = 1 # Set the value for player 1
+# 	print("My turn!")
+# 	# Print the board for visualization
+# 	PrintBoard(board)
+# 	# Check if we have a winner
+# 	winner = CheckWin(board)
+# 	if(winner==1 or winner==-3):
+# 		break
+# 	# Now the player2 can choose a number
+# 	print("Now your turn to choose an integer between [0,8]")
+# 	p2_ind = input()
+# 	p2_ind = int(p2_ind)
+# 	while(p2_ind<0 or p2_ind>8):
+# 		print("Pick the correct number idiot!")
+# 		p2_ind = input()
+# 		p2_ind = int(p2_ind)
 
-	# Ask user for input as long as the board position choosen is empty
-	while(board[p2_ind]!=0):
-		print("Oops! That position seems to be filled. Choose another one!")
-		PrintBoard(board)
-		p2_ind = input()
-		p2_ind = int(p2_ind)
-	# Set the value for board two player
-	board[p2_ind] = -1
-	print("The board looks like this!")
-	# Print the board
-	PrintBoard(board)
-	# Check for winner
-	winner = CheckWin(board)
+# 	# Ask user for input as long as the board position choosen is empty
+# 	while(board[p2_ind]!=0):
+# 		print("Oops! That position seems to be filled. Choose another one!")
+# 		PrintBoard(board)
+# 		p2_ind = input()
+# 		p2_ind = int(p2_ind)
+# 	# Set the value for board two player
+# 	board[p2_ind] = -1
+# 	print("The board looks like this!")
+# 	# Print the board
+# 	PrintBoard(board)
+# 	# Check for winner
+# 	winner = CheckWin(board)
 
-if(winner == 1):
-	print("Fuck you loser!")
-elif(winner == 2):
-	print("I accept defeat!")
-else:
-	print("Its a draw! Let us shake hands")
+# if(winner == 1):
+# 	print("Fuck you loser!")
+# elif(winner == 2):
+# 	print("I accept defeat!")
+# else:
+# 	print("Its a draw! Let us shake hands")
 
 # PrintBoard(board)
 # value = (CheckWin(board))

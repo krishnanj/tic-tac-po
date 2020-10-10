@@ -27,7 +27,7 @@ root = Tk()
 
 def callback(r,c, butmat):
     print(r,c)
-    butmat[r][c].configure(text = '1', bg='red')
+    butmat[r][c].configure(text = '1', bg='red', highlightbackground='blue')
 
 
 cells = {}
@@ -47,7 +47,7 @@ for row_index in range(n):
         # i = 0
         # j = 1 
         # par = partial(my_func_name, btn, 1)
-        butmat[row_index][col_index] = Button(root,command=partial(callback,row_index, col_index,butmat), padx=25, pady=25, bg = "#66CCCC",highlightcolor='red')
+        butmat[row_index][col_index] = Button(root,command=partial(callback,row_index, col_index,butmat), padx=25, pady=25, bg = "#66CCCC", highlightbackground='red')
         butmat[row_index][col_index].grid(row=row_index, column=col_index)
         # but.config(bg='red')
 
