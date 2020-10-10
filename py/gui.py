@@ -10,50 +10,13 @@ n = 3
 sz = 100
 pad = 0
 tc = 2
-# geo = '500x350'
 geo = '100x100'
 fr = 10
 board = np.full(n*n, 0)
+
 # create a main tkinter window
 root = tk.Tk()
-# root.title('Tic-Tac-Toe')
-# root.geometry(geo)
 
-
-# # create all of the main containers
-# center = tk.Frame(root, bg='white', width=fr, height=fr, padx=pad, pady=pad)
-
-# # layout all of the main containers
-# Grid.rowconfigure(root, 0, weight=1)
-# Grid.columnconfigure(root, 0, weight=1)
-# # root.grid_rowconfigure(0, weight=1)
-# # root.grid_columnconfigure(0, weight=1)
-# frame=Frame(root)
-# frame.grid(row=0, column=0, sticky=N+S+E+W)
-# center.grid(row=1)
-
-# cells = {}
-# for row in range(n):
-#     Grid.rowconfigure(frame, row, weight=1)
-#     for column in range(n):
-#         Grid.columnconfigure(frame, column, weight=1)
-#         btn = Button(frame, text='This one?')
-#         btn.grid(row=row, column=column, sticky=N+S+E+W)
-#         cell = tk.Frame(center, bg='white', highlightbackground="black",
-#                      highlightcolor="black", highlightthickness=tc,
-#                      width=sz, height=sz,  padx=pad,  pady=pad)
-#         cell.grid(row=row, column=column)
-#         cells[(row, column)] = cell
-        # Grid.columnconfigure(frame, col_index, weight=1)
-        # btn = Button(frame) #create a button inside frame 
-        # btn.grid(row=row_index, column=col_index, sticky=N+S+E+W)  
-# def callback(r,c, butmat, p):
-#     if(p=='comp'):
-#         butmat[r][c].configure(text = '1', bg='red', highlightbackground='red')
-#     elif(p=='hum'):
-#         butmat[r][c].configure(text = '-1', bg='green', highlightbackground='green')
-#         print(r, c)
-#     return r, c
 def Array2Grid(index):
     a = index%n
     b = int(np.floor(index/n))
@@ -79,7 +42,6 @@ butmat = [[0 for x in range(n)] for x in range(n)]
 
 #Create a 5x10 (rows x columns) grid of buttons inside the frame
 for row_index in range(n):
-    # Grid.rowconfigure(frame, row_index, weight=1)
     for col_index in range(n):
         butmat[row_index][col_index] = Button(root,command=partial(HumanCallBack,row_index, col_index,butmat), padx=25, pady=25, bg = "#66CCCC", highlightbackground='#66CCCC')
         butmat[row_index][col_index].grid(row=row_index, column=col_index)
