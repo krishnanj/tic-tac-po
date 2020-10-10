@@ -97,6 +97,33 @@ def DrawBoard(board):
 #     # p2_ind = callback(r, c, butmat)
 #     p2_ind = 
 #     return p2_ind
+=======
+root.title('Tic-Tac-Toe')
+root.geometry(geo)
+
+
+# create all of the main containers
+center = tk.Frame(root, bg='white', width=fr, height=fr, padx=pad, pady=pad)
+
+# layout all of the main containers
+Grid.rowconfigure(root, 0, weight=1)
+Grid.columnconfigure(root, 0, weight=1)
+
+frame=Frame(root)
+frame.grid(row=0, column=0, sticky=N+S+E+W)
+center.grid(row=1)
+
+cells = {}
+for row in range(n):
+    # Grid.rowconfigure(frame, row_index, weight=1)
+    for column in range(n):
+        cell = tk.Frame(center, bg='white', highlightbackground="black",
+                     highlightcolor="black", highlightthickness=tc,
+                     width=sz, height=sz,  padx=pad,  pady=pad)
+        cell.grid(row=row, column=column)
+        cells[(row, column)] = cell
+
+>>>>>>> 95b92621f80b919c9ab9e97fbe30aec83063fcbd
 
 # Set the value for board two player
 def task():
@@ -166,5 +193,4 @@ root.mainloop()
 #             cells[(i,j)].configure(background="blue")
 
 # root.mainloop() 	#https://stackoverflow.com/questions/48027440/how-to-create-a-9x9-grid-more-efficiently-python-tkinter
-
 

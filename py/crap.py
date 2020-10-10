@@ -30,6 +30,7 @@ def callback(r,c, butmat):
     butmat[r][c].configure(text = '1', bg='red', highlightbackground='blue')
 
 
+
 cells = {}
 butmat = [[0 for x in range(n)] for x in range(n)]
 #Create a 5x10 (rows x columns) grid of buttons inside the frame
@@ -48,6 +49,7 @@ for row_index in range(n):
         # j = 1 
         # par = partial(my_func_name, btn, 1)
         butmat[row_index][col_index] = Button(root,command=partial(callback,row_index, col_index,butmat), padx=25, pady=25, bg = "#66CCCC", highlightbackground='red')
+
         butmat[row_index][col_index].grid(row=row_index, column=col_index)
         # but.config(bg='red')
 
