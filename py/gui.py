@@ -97,7 +97,6 @@ def DrawBoard(board):
 #     # p2_ind = callback(r, c, butmat)
 #     p2_ind = 
 #     return p2_ind
-=======
 root.title('Tic-Tac-Toe')
 root.geometry(geo)
 
@@ -123,7 +122,6 @@ for row in range(n):
         cell.grid(row=row, column=column)
         cells[(row, column)] = cell
 
->>>>>>> 95b92621f80b919c9ab9e97fbe30aec83063fcbd
 
 # Set the value for board two player
 def task():
