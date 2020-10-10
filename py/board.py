@@ -85,7 +85,7 @@ def ComputerStrategy(board):
 	while board[p1_ind]!=0:
 		p1_ind = randrange(n*n)
 	return p1_ind
-# # Print the behinning
+# # Print the beginning
 # print("Let us play a game of tic-tac-toe.")
 # # Initialiaze the winner to some random value
 # PrintBoard(board)
